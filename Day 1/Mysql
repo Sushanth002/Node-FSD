@@ -1,0 +1,40 @@
+Foreign Key and its uses
+--------------------------------
+
+A foreign key is a column or set of columns in a table that links to the primary key or a unique key in another table. 
+Its primary purpose is to enforce referential integrity, ensuring that relationships between tables are maintained, data remains consistent, and only valid data is inserted.
+
+
+Syntax
+-------
+
+ALTER TABLE child_table
+ADD CONSTRAINT constraint_name
+FOREIGN KEY (child_column)
+REFERENCES parent_table(parent_column);
+
+Example:
+-----------
+
+department Table
+
+CREATE TABLE Dept(
+	deptno  INT PRIMARY KEY,
+    dname   VARCHAR(100) NOT NULL,
+    loc    VARCHAR(100)
+);
+
+
+
+
+Employee Table
+
+CREATE TABLE Emps
+(
+	empno INT PRIMARY KEY,
+	ename VARCHAR(100),
+	job   VARCHAR(100),
+	salary   INT,
+    deptno INT,
+	foreign key(deptno) references dept(deptno)
+);
