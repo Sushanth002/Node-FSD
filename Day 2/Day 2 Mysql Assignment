@@ -1,0 +1,144 @@
+Assignments for Day-2
+~~~~~~~~~~~~~~~~~~~
+
+1.   What is Views in MySql?  Why do we use Views? How to create views in MySql?
+
+In MySQL, a view is a virtual table that represents the result set of a SELECT query. It doesn't store any data on its own but 
+instead fetches data from the underlying tables whenever it's queried. Views can be used just like tables in SQL queries, 
+allowing you to simplify complex queries, provide a layer of abstraction, and enforce security and access controls.
+
+Uses of Views:
+---------------
+
+Code Reusability: Views allow you to define common queries once and reuse them in multiple places within your application or database. 
+This promotes code reusability and helps maintain consistency across queries.
+
+Performance Optimization: In some cases, views can improve query performance by storing the results of frequently executed queries. 
+This can reduce the overhead of executing complex queries repeatedly and improve overall system performance.
+
+Data Abstraction: Views provide a layer of abstraction over the underlying tables. This means that users can interact with views without 
+needing to know the details of the underlying table structure or the complexity of the SQL query used to create the view.
+
+Creating Views:
+----------------
+
+Syntax:
+-------
+
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+Example:
+--------
+
+CREATE VIEW employee_view AS
+SELECT employee_id, first_name, last_name, department
+FROM employees
+WHERE department = 'Sales';
+
+Display result of views:
+-------------------------
+
+SELECT * FROM employee_view;
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.  Create a stored procedures that will display the employee details based on the given dept name.  Dept name is the input for stored procedure. 
+
+
+DELIMITER //
+CREATE PROCEDURE usp_getEmpsByDeptname(IN p_deptname VARCHAR(50))  	
+BEGIN
+    SELECT * FROM dept WHERE dname=p_deptname;
+END //    
+DELIMITER ;
+
+
+CALL usp_getEmpsByDeptname('Sales');
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+
+3. Create stored procedures that get employees count who are having greater salary than the average of all salaries.  Return employees count  as output variable. 
+
+ DELIMITER //
+
+CREATE PROCEDURE GetEmployeesCountAboveAverage(INOUT emp_count INT)
+BEGIN
+    DECLARE avg_salary INT;
+    
+    -- Calculate the average salary
+    SELECT AVG(salary) INTO avg_salary FROM emps;
+    
+    -- Get the count of employees with salary greater than the average
+    SELECT COUNT(*) INTO emp_count FROM emps WHERE salary > avg_salary;
+    
+    -- Output the result
+    SELECT emp_count AS EmployeesCountAboveAverage;
+END //
+
+DELIMITER ;
+
+-- Displaying the result
+
+CALL GetEmployeesCountAboveAverage(@employee_count);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Create stored procedures that insert the data into emp table. Take all the required values as input parameters. 
+
+ DELIMITER //
+
+CREATE PROCEDURE InsertEmployee(
+    IN empno INT,
+    IN ename VARCHAR(100),
+    IN job VARCHAR(100),
+    IN salary INT,
+    IN deptno INT
+)
+BEGIN
+    INSERT INTO Emps (empno, ename, job, salary, deptno) 
+    VALUES (empno, ename, job, salary, deptno);
+END //
+
+DELIMITER ;
+
+
+CALL InsertEmployee(1234, 'SUSHANTH', 'NODE FSD', 80000, 7);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Create View to return employee job and corresponding  max salary in each job.  
+
+CREATE VIEW MaxSalaryByJob AS
+SELECT job, MAX(salary) AS max_salary
+FROM Emps
+GROUP BY job;
+
+SELECT * FROM MaxSalaryByJob;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6.  How to use distinct option in select query? 
+
+
+In MySQL, you can use the DISTINCT keyword in a SELECT query to retrieve unique values from a specified column or combination of columns. 
+
+Syntax:
+-------
+
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+
+Example:
+--------
+
+SELECT DISTINCT deptno, job
+FROM emps;
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
