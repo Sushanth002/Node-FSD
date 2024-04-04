@@ -139,6 +139,70 @@ FROM emps;
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7.  Create  ProductsLogs table to store the following information. 
+		 Eg:	  Id, Operation, ProductId, ProductName,  Date, Time,  Message 
+		
+		Hint: Target the Products table. 
 
 
+CREATE TABLE ProductsLogs(
+Id INT AUTO_INCREMENT PRIMARY KEY,
+Operation VARCHAR(200), 
+ProductId INT, 
+ProductName VARCHAR(200),  
+Date DATE, 
+Time TIME,  
+Message VARCHAR(200) 
+);
 
+INSERT INTO ProductsLogs(Operation,ProductId,ProductName,Date,Time,Message) VALUES
+('Insert', 2,'Mobile',CURDATE(),CURTIME(),'Product Inserted');
+
+SELECT * FROM productslogs;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+8.    Create  a AFTER INSERT trigger operation  and  insert the corresponding details ProductsLogs table. 
+
+DELIMITER //
+CREATE TRIGGER trg_after_insert_products
+AFTER INSERT
+ON Products FOR EACH ROW
+BEGIN
+INSERT INTO ProductsLogs(Operation,ProductId,ProductName,Date,Time,Message) VALUES
+('Insert', 2,'Mobile',CURDATE(),CURTIME(),'Product Inserted');
+END
+//
+DELIMITER ;
+
+-- Inserting the values to check wheather trigger is working or not
+-------------------------------------------------------------------
+
+INSERT INTO products(ProductId,Name,QuantityInStock,UnitPrice,Category)
+VALUES
+(1,'Laptop',30,900000,'Electronics');
+
+SELECT * FROM productslogs;
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9.  Create  a AFTER DELETE trigger operation  and  insert the corresponding details ProductsLogs table with corresponding message. 
+
+DELIMITER //
+CREATE TRIGGER AfterProductDelete
+AFTER DELETE ON Products
+FOR EACH ROW
+BEGIN
+    INSERT INTO ProductsLogs (Operation, ProductId, ProductName, Date, Time, Message)
+    VALUES ('DELETE', OLD.ProductId, OLD.Name, CURDATE(), CURTIME(), 'Product deleted');
+END;
+//
+DELIMITER ;
+
+-- Deleting the values to check wheather trigger is working or not
+-------------------------------------------------------------------
+DELETE FROM Products WHERE ProductId = 1;
+
+SELECT * FROM ProductsLogs;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
