@@ -1,0 +1,175 @@
+
+Day 3 Assignment
+-----------------
+1.   Go through the node js fundamental documents that i shared. 
+
+2.   Study the Project Case Study and discuss with your project team member.
+ 
+3.  Find some details about the following things about node:
+
+
+a.   Find some more details about callbacks
+
+a. Callbacks in Node.js:
+Callbacks are functions passed as arguments to other functions, which are then invoked when a certain operation or task is completed. 
+In Node.js, callbacks are extensively used for asynchronous programming, where tasks like reading files, making HTTP requests, 
+or handling database operations are non-blocking and don't halt the execution of the program.
+
+Callbacks are typically used in Node.js to handle asynchronous operations like I/O tasks or network requests. 
+They are a fundamental concept in Node.js, allowing developers to write non-blocking, event-driven code.
+
+
+b.   Check the following methods in javascript where callbacks are involved:
+	a.  map()
+	b.  findIndex()
+	c.   find()
+	d. filter()
+
+
+map(): The map() method creates a new array populated with the results of calling a provided function on every element in the calling array. This provided function can be a callback.
+
+findIndex(): The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. If no such element is found, it returns -1.
+The testing function can be a callback.
+
+find(): The find() method returns the value of the first element in the array that satisfies the provided testing function. If no such element is found, it returns undefined. 
+The testing function can be a callback.
+
+filter(): The filter() method creates a new array with all elements that pass the test implemented by the provided function. The provided function can be a callback. 
+
+
+c.   What kind of applications we can create using node js?
+
+Web applications (e.g., web servers, APIs)
+Real-time applications (e.g., chat applications, online gaming)
+Streaming applications (e.g., video streaming, file streaming)
+Command-line tools and utilities
+RESTful services and microservices architecture
+Internet of Things (IoT) applications
+Data-intensive applications (e.g., analytics, big data processing)
+
+
+d.   Find out more details  about "Event Loops" in node js 
+
+->Event loops in Node.js are responsible for handling asynchronous operations and managing non-blocking I/O operations efficiently. 
+The event loop continuously checks for pending events (such as I/O operations, timers, or callbacks) and executes their associated callback functions when those events occur.
+
+->Node.js uses a single-threaded, event-driven architecture, where the event loop is the core mechanism that allows Node.js to handle multiple 
+concurrent operations without blocking the execution of other tasks.
+
+->The event loop consists of several phases, including timers, pending callbacks, idle, poll, check, and close callbacks. 
+These phases ensure that asynchronous tasks are executed in a timely and efficient manner, providing high performance and scalability for Node.js applications.
+
+->Understanding event loops is crucial for writing efficient and scalable Node.js applications, as it allows developers to leverage non-blocking I/O and asynchronous programming effectively.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4.  What are differences between MySql and MongoDb? 
+
+1-Data Model:
+--------------
+MySQL: MySQL is a relational database management system (RDBMS), which means it organizes data into tables with rows and columns. 
+It follows the ACID (Atomicity, Consistency, Isolation, Durability) properties and uses SQL (Structured Query Language) for querying and manipulating data.
+
+MongoDB: MongoDB is a NoSQL database, specifically a document-oriented database. It stores data in flexible, JSON-like documents, allowing for nested 
+structures and dynamic schemas. MongoDB doesn't follow the traditional relational model and doesn't require a fixed schema for data.
+
+
+2-Query Language:
+-----------------
+MySQL: MySQL uses SQL (Structured Query Language) for querying and manipulating data. SQL is a standardized language for relational databases, 
+consisting of commands like SELECT, INSERT, UPDATE, DELETE, etc.
+
+MongoDB: MongoDB uses a query language based on JSON-like syntax. Queries are expressed as JSON-like objects and can include conditions, projections, 
+and other operations. MongoDB's query language is specifically designed for querying document-oriented databases.
+
+
+3-Schema Flexibility:
+---------------------
+MySQL: MySQL has a rigid schema structure, meaning you need to define the structure of your tables and columns upfront. Altering the schema can be complex and may require downtime.
+
+MongoDB: MongoDB offers schema flexibility, allowing documents within a collection to have different structures. This flexibility makes it easier to adapt to 
+changing data requirements without downtime or complex migrations.
+
+
+4-Scalability:
+--------------
+MySQL: MySQL traditionally scales vertically, meaning you can increase the capacity of a single server by adding more CPU, memory, or storage. 
+Scaling horizontally (across multiple servers) can be challenging and typically requires sharding.
+
+MongoDB: MongoDB is designed for horizontal scalability. It supports sharding out of the box, allowing you to distribute data across 
+multiple servers and handle large-scale deployments more easily.
+
+
+5-Complex Transactions:
+-----------------------
+MySQL: MySQL supports complex transactions with ACID properties, making it suitable for applications with strict transactional requirements.
+
+MongoDB: MongoDB supports multi-document transactions starting from version 4.0, but transactions are limited to operations within a single shard. 
+It may not be as suitable for applications with highly complex transactional requirements compared to MySQL.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+5.  What is "let"  keyword in javascript? Diff. between  "var" and "left" keyword?
+
+let Keyword:
+------------
+In JavaScript, let is a keyword used to declare variables with block scope. It was introduced in ECMAScript 6 (ES6) to provide a more predictable way to declare variables compared to var, 
+which has function scope or global scope.
+
+Differences:
+-------------
+
+1-Scope:
+--------
+var: Variables declared with var have function scope or global scope, meaning they are accessible throughout the function in which they are declared, regardless of block boundaries.
+
+let: Variables declared with let have block scope, meaning they are accessible only within the block in which they are declared. 
+Block scope includes if statements, loops, and any other code blocks.
+
+Example:
+--------
+
+function example() {
+    if (true) {
+        var x = 10;
+        let y = 20;
+    }
+    console.log(x); // Output: 10 (accessible)
+    console.log(y); // Error: y is not defined (not accessible)
+}
+
+
+2-Hoisting:
+-----------
+var: Variables declared with var are hoisted to the top of their function or global scope and initialized with undefined. 
+This means you can access a var variable before it is declared, but its value will be undefined.
+
+let: Variables declared with let are hoisted to the top of their block scope, but they are not initialized. 
+Attempting to access a let variable before it is declared results in a ReferenceError.
+
+Example:
+--------
+
+console.log(x); // Output: undefined
+console.log(y); // ReferenceError: y is not defined
+
+var x = 10;
+let y = 20;
+
+
+3-Re-declaration:
+-----------------
+var: You can re-declare a variable using var within the same scope without any error.
+
+let: Attempting to re-declare a variable using let within the same scope will result in a SyntaxError.
+
+Example:
+--------
+
+var x = 10;
+var x = 20; // No error
+
+let y = 10;
+let y = 20; // SyntaxError: Identifier 'y' has already been declared
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
