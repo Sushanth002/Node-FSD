@@ -1,0 +1,445 @@
+Day 4 Assignment
+----------------
+
+Assignments-1
+~~~~~~~~~~~~
+
+
+1. what is regular expression in java script?
+
+A regular expression, often abbreviated as regex, regexp, or RegEx, is a sequence of characters that define a search pattern. 
+In JavaScript, regular expressions are objects that are used to perform pattern-matching and search operations on strings. They provide a powerful and flexible way to search, 
+replace, and extract text based on patterns.
+
+Regular expressions in JavaScript are created using the RegExp constructor or by using the literal syntax enclosed within forward slashes (/). 
+
+For example:
+
+// Using RegExp constructor
+let regex1 = new RegExp('pattern');
+
+// Using literal syntax
+let regex2 = /pattern/;
+
+
+Here are some common operations performed using regular expressions in JavaScript:
+
+1.Pattern Matching: Regular expressions can be used to find patterns within strings. For example, finding all occurrences of a particular word or character sequence within a string.
+
+2.Search and Replace: Regular expressions can be used to search for specific patterns and replace them with other strings. This is often used for string manipulation and text 
+processing tasks.
+
+3.Validation: Regular expressions are commonly used for input validation, such as validating email addresses, phone numbers, or other user input against predefined patterns.
+
+4.Splitting Strings: Regular expressions can be used to split strings into substrings based on matching patterns. This is useful for parsing text data or breaking down 
+complex strings into smaller parts.
+
+5.Capturing Groups: Regular expressions support capturing groups, which allow you to extract specific parts of a matched string. Capturing groups are enclosed within 
+parentheses () in the regular expression pattern.
+
+
+Example of using regular expression to search for a pattern within a string and extract matching substrings:
+
+let str = 'Hello, world! This is a sample string.';
+let pattern = /Hello, (world)!/;
+let result = pattern.exec(str);
+
+console.log(result[0]); // Output: Hello, world!
+console.log(result[1]); // Output: world
+
+
+Regular expressions can contain various special characters and modifiers that define the pattern to be matched. Some common special characters include ^ (start of line), 
+$ (end of line), . (any character), * (zero or more occurrences), + (one or more occurrences), ? (zero or one occurrence), [ ] (character class), { } (quantifiers), 
+and \ (escape character).
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.how to use regular expressions in java script?
+
+
+JavaScript provides several built-in methods that accept regular expressions as parameters for pattern matching and manipulation:
+
+test(): Tests whether a string matches a regular expression pattern and returns true or false.
+exec(): Executes a search for a match in a specified string and returns the first match.
+match(): Returns an array containing all matches of a pattern in a string.
+search(): Searches a string for a specified pattern and returns the position of the first match.
+replace(): Searches a string for a specified pattern, replaces it with a replacement string, and returns the modified string.
+split(): Splits a string into an array of substrings based on a specified separator (which can be a regular expression).
+
+Example:
+---------
+
+let str = "Hello, world!";
+let pattern = /Hello/;
+
+console.log(pattern.test(str));   // Output: true
+console.log(pattern.exec(str));   // Output: ["Hello", index: 0, input: "Hello, world!", groups: undefined]
+console.log(str.match(pattern)); // Output: ["Hello"]
+console.log(str.search(pattern)); // Output: 0
+console.log(str.replace(pattern, "Hi")); // Output: "Hi, world!"
+console.log(str.split(pattern)); // Output: ["", ", world!"]
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.  Go through the details of  javascript array methods :  
+				map, find, findindex, filter
+
+map() Method:
+-------------
+
+Description: The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+Syntax: array.map(callback(currentValue, index, array), thisArg)
+
+Example:
+----------
+
+// Example 1: Doubling each number in an array
+let numbers = [1, 2, 3, 4, 5];
+let doubledNumbers = numbers.map(num => num * 2);
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+
+// Example 2: Converting an array of strings to uppercase
+let fruits = ["apple", "banana", "cherry"];
+let uppercaseFruits = fruits.map(fruit => fruit.toUpperCase());
+console.log(uppercaseFruits); // Output: ["APPLE", "BANANA", "CHERRY"]
+
+
+
+find() Method:
+---------------
+
+Description: The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise, it returns undefined.
+
+Syntax: array.find(callback(element, index, array), thisArg)
+
+Example:
+--------
+
+let numbers = [10, 20, 30, 40, 50];
+let foundNumber = numbers.find(num => num > 25);
+console.log(foundNumber); // Output: 30
+
+
+
+findIndex() Method:
+-------------------
+
+Description: The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1.
+
+Syntax: array.findIndex(callback(element, index, array), thisArg)
+
+Example:
+--------
+
+let numbers = [10, 20, 30, 40, 50];
+let foundIndex = numbers.findIndex(num => num > 25);
+console.log(foundIndex); // Output: 2 (index of 30)
+
+
+
+filter() Method:
+-----------------
+
+Description: The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+
+Syntax: array.filter(callback(element, index, array), thisArg)
+
+Example:
+--------
+
+// Example 1: Filtering even numbers from an array
+let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4]
+
+// Example 2: Filtering names starting with 'A' from an array
+let names = ["Alice", "Bob", "Anna", "David"];
+let namesStartingWithA = names.filter(name => name.startsWith('A'));
+console.log(namesStartingWithA); // Output: ["Alice", "Anna"]
+
+
+
+4.  Study the following urls :
+			https://www.w3schools.com/angular/customers.php
+			https://reqres.in/api/users/
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Assignments-2
+~~~~~~~~~~~~
+		Create an array of product objects and each product object should include the following properties.
+
+		properties:		id, pname, price, qty,  category 
+
+
+// Array of product objects
+let products = [
+    {
+        id: 1,
+        pname: "Laptop",
+        price: 999.99,
+        qty: 10,
+        category: "Electronics"
+    },
+    {
+        id: 2,
+        pname: "Smartphone",
+        price: 699.99,
+        qty: 15,
+        category: "Electronics"
+    },
+    {
+        id: 3,
+        pname: "Headphones",
+        price: 99.99,
+        qty: 20,
+        category: "Electronics"
+    },
+    {
+        id: 4,
+        pname: "T-shirt",
+        price: 19.99,
+        qty: 50,
+        category: "Clothing"
+    },
+    {
+        id: 5,
+        pname: "Jeans",
+        price: 39.99,
+        qty: 30,
+        category: "Clothing"
+    }
+];
+
+
+console.log(products);
+
+
+		
+a.  display the product details based on the given product id	
+
+let productDetailsById =  products.find(item =>  item.id == 5);
+
+console.log(productDetailsById);
+
+
+
+b.  display the product names and unit price based on the given category
+
+let Category="Clothing";
+
+let resultArray =  products.filter(item =>  item.category == Category);
+
+for(let item of resultArray)
+{
+    console.log(`${item.pname}: ${item.price}`);
+}
+
+
+
+c.   add new product to array 
+
+
+let newProduct = {
+    id: 6,
+    pname: "Mouse",
+    price: 500.00,
+    qty: 25,
+    category: "Electronics"
+};
+
+products.push(newProduct);
+
+console.log(products);
+
+
+
+d.   delete the product based on the product id 
+
+function deleteProduct(productId) {
+    // Check if product with given ID exists
+    let index = products.findIndex(product => product.id == productId);
+    if (index != -1) {
+        // Remove the product from the array
+        products.splice(index, 1);
+        console.log("Product deleted successfully!");
+    } else {
+        // Product not found
+        console.log("Product not found.");
+    }
+}
+
+// Example of deleting a product
+deleteProduct(6); // Delete product with ID 6
+
+// Print the updated array of product objects
+console.log(products);
+
+
+
+e.   display the product details based on the range of price (min, max) 
+
+function displayProductDetailsByPriceRange(minPrice, maxPrice) {
+    // Filter products based on the given price range
+    let filteredProducts = products.filter(product => product.price >= minPrice && product.price <= maxPrice);
+
+    // Check if products are found for the price range
+    if (filteredProducts.length > 0) {
+        for (let product of filteredProducts) {
+            console.log("Product ID:", product.id);
+            console.log("Product Name:", product.pname);
+            console.log("Price:", product.price);
+            console.log("Quantity:", product.qty);
+            console.log("Category:", product.category);
+            console.log("---------------------------");
+        }
+    } else {
+        console.log(`No products found within the price range ${minPrice} - ${maxPrice}.`);
+    }
+}
+
+// Example of displaying product details within a price range
+displayProductDetailsByPriceRange(10, 5000);
+
+
+
+f.    display out of stock products  (i.e qty is zero)
+
+function displayOutOfStockProducts() {
+    // Filter products where quantity is zero
+    let outOfStockProducts = products.filter(product => product.qty === 0);
+
+    // Check if out of stock products are found
+    if (outOfStockProducts.length > 0) {
+        // Display out of stock product details
+        console.log("Out of Stock Products:");
+        for (let product of outOfStockProducts) {
+            console.log("Product ID:", product.id);
+            console.log("Product Name:", product.pname);
+            console.log("Price:", product.price);
+            console.log("Quantity:", product.qty);
+            console.log("Category:", product.category);
+            console.log("---------------------------");
+        }
+    } else {
+        // No out of stock products found
+        console.log("No out of stock products.");
+    }
+}
+
+// Example of displaying out of stock products
+displayOutOfStockProducts(); 
+
+
+
+g.   perform sorting the array based on the price 
+	  
+function sortProductsByPrice() {
+    // Sort products array based on price (ascending order)
+    products.sort((a, b) => a.price - b.price);
+
+    // Display sorted products
+    for(let product of products){
+        console.log("Product Name:", product.pname);
+        console.log("Price:", product.price);
+        console.log("---------------------------");
+       }
+}
+
+// Example of sorting products by price
+sortProductsByPrice();
+
+		
+		
+Note:  display proper message if the given requirements are not satisfy the conditions(for example "product not found").
+		
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+Assignments-3
+~~~~~~~~~~~~~
+
+a.  How to extract only values from the object?
+
+
+To extract only values from an object in JavaScript, you can use a combination of Object.values() method and a loop or array methods like map().
+
+Using Object.values() with a Loop:
+---------------------------------------
+
+// Sample object
+let obj = {
+    id: 1,
+    name: "John",
+    age: 30
+};
+
+// Extract values using Object.values() and a loop
+let values = [];
+for (let value of Object.values(obj)) {
+    values.push(value);
+}
+
+console.log(values); // Output: [1, "John", 30]
+
+
+Using Object.values() with map():
+-------------------------------------
+
+// Sample object
+let obj = {
+    id: 1,
+    name: "John",
+    age: 30
+};
+
+// Extract values using Object.values() and map()
+let values = Object.values(obj).map(value => value);
+
+console.log(values); // Output: [1, "John", 30]
+
+
+		
+b.  How to clone the object?
+
+
+To clone an object in JavaScript, you can use various methods such as object spread syntax ({...}), Object.assign(), or the JSON.parse() and JSON.stringify() methods. 
+
+Here are some examples:
+
+Using Object Spread Syntax ({...}):
+-------------------------------------
+
+let originalObject = { id: 1, name: "John" };
+
+// Clone the object using object spread syntax
+let clonedObject = { ...originalObject };
+
+console.log(clonedObject); // Output: { id: 1, name: "John" }
+
+Using Object.assign():
+-----------------------
+
+let originalObject = { id: 1, name: "John" };
+
+// Clone the object using Object.assign()
+let clonedObject = Object.assign({}, originalObject);
+
+console.log(clonedObject); // Output: { id: 1, name: "John" }
+
+
+Using JSON.parse() and JSON.stringify():
+-----------------------------------------
+
+let originalObject = { id: 1, name: "John" };
+
+// Clone the object using JSON.parse() and JSON.stringify()
+let clonedObject = JSON.parse(JSON.stringify(originalObject));
+
+console.log(clonedObject); // Output: { id: 1, name: "John" }
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
