@@ -1,0 +1,95 @@
+Day 5 Assignment
+------------------
+
+1.What is the regular expressions to validate vehicle registration number (Eg:   TS10AB1234 )
+
+A regular expression (regex) to validate vehicle registration numbers like "TS10AB1234" could be constructed based on the pattern of such registration numbers. 
+
+
+let registrationNumber = "TS10AB1234";
+let regex = /^([A-Z]{2}\d{2}[A-Z]{2}\d{4})$/i;
+
+if (regex.test(registrationNumber)) {
+    console.log("Valid vehicle registration number.");
+} else {
+    console.log("Invalid vehicle registration number.");
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.What are data structure? Why do we need?
+
+
+Data structures are fundamental concepts in computer science that provide organized methods for storing, accessing, and managing data efficiently. They define the way data is 
+organized and stored in memory, allowing for easy manipulation and retrieval of information. Data structures are crucial for solving complex computational problems efficiently.
+
+
+Here's why data structures are important:
+-------------------------------------------
+
+1.Efficient Data Organization:
+----------------------------- 
+Data structures enable efficient organization of data in memory, facilitating fast access and retrieval operations. 
+Different data structures are designed for specific types of data and operations, optimizing performance for different use cases.
+
+2.Algorithm Design:
+-------------------
+Data structures play a crucial role in algorithm design and analysis. Many algorithms rely on specific data structures to efficiently solve computational problems. 
+Choosing the right data structure is essential for designing efficient algorithms.
+
+3.Memory Optimization:
+---------------------- 
+Using appropriate data structures helps optimize memory usage. By storing data in organized structures, memory can be allocated and managed more efficiently, 
+reducing space complexity and improving overall performance.
+
+4.Fast Access and Retrieval: 
+----------------------------
+Data structures provide methods for fast access, insertion, deletion, and search operations. They enable efficient retrieval of information, 
+making it easier to work with large datasets and perform complex computations.
+
+5.Scalability:
+--------------- 
+As data grows in size and complexity, efficient data structures are essential for handling large volumes of data effectively. Properly chosen data structures 
+can scale well to accommodate increasing data sizes without sacrificing performance.
+
+6.Abstraction and Encapsulation:
+-------------------------------- 
+Data structures abstract the underlying implementation details, allowing programmers to focus on the logical organization and manipulation of 
+data rather than low-level memory management. This abstraction promotes code readability, reusability, and maintainability.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.What are the applications of stack and queue in real-time applications?
+
+Stacks and queues are fundamental data structures with various real-time applications due to their specific characteristics and properties. 
+
+Here are some common applications of stacks and queues in real-time scenarios:
+
+Stacks:
+-------
+
+1.Function Call Management
+
+2.Undo Mechanism
+
+3.Expression Evaluation
+
+4.Browser History
+
+5.Memory Management
+
+
+Queues:
+-------
+
+1.Task Scheduling
+
+2.Printer Queue
+
+3.Message Queues
+
+4.Breadth-First Search (BFS)
+
+5.Buffering
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
