@@ -1,0 +1,17 @@
+1.  Implement the following requirement in the express application:
+			a.   Send static html files for the requests like About.html, contact.html
+			b.   Use *.css files in the above html pages
+
+2.   Create a middleware function that should register requests details in the file called userLogs.txt file.
+
+		a.  It should record the date and time of the request 
+		b.  It should specify requested url details also 
+		
+3.   Implement NotFound request handling in your project 
+
+4.  Create a route to implement the following requirement:
+		a.  create a route as  EmpList
+		b.   it should display employee details based on the given deptno 
+		c.   Send the deptno using query string concept. 
+		d.   If deptno missing in querystring, you need display all employee details 
+		e.   Take the data from database using models and services concept. 
