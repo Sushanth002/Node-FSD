@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <style>
+            h3{
+                color : blue;
+                text-align: center;
+            }
+
+            div
+            {
+                border: 2px solid blue;
+                margin: 10px;
+                padding : 5px;
+
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Developing MVC Based Web Application using Express JS</h3>
+        <hr/>
+
+        <img src="/images/Express_Banner.png" width="500" />
+        <img src="/images/Express_Banner2.png" width="500" />
+        <hr/>
+
+        <div>
+            <a href="/staticfiles/about.html" target="_blank">About Us</a>
+            <a href="/staticfiles/contact.html"target="_blank">Contact Us</a>
+        </div>
+
+
+        <h2>All Department Details Page</h2>
+
+        <a href="/DeptController/CreateDept">Create New Dept</a>
+        <hr/>
+        <table width="500"  border="2">
+                <tr>
+                    <th>Dept Number</th>
+                    <th>Dept Name</th>
+                    <th>Dept Location</th>
+                    <th> </th>
+                </tr>
+
+
+                <%
+                    for(let item of deptsArray)  
+                    {
+                %>
+
+                    <tr>
+                        <td> <%=item.deptno%> </td>
+                        <td> <%=item.dname%> </td>
+                        <td> <%=item.loc%> </td>
+                        <td align="center">
+                            <!-- <a href="/DeptController/DeptDetails/<%=item.deptno%>">Details</a> -->
+                             <a href="/DeptController/DeptDetails?id=<%=item.deptno%>">Details</a> 
+                        </td>
+                    </tr>
+
+                <%  } %>
+
+
+        </table>
+        
+    </body>
+</html>
