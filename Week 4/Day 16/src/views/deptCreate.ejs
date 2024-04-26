@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            h3{
+                color : blue;
+                text-align: center;
+            }
+
+            div
+            {
+                border: 2px solid blue;
+                margin: 10px;
+                padding : 5px;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3>Developing MVC Based Web Application using Express JS</h3>
+        <hr/>
+
+
+        <h2>Create New Dept Page</h2>
+        <hr/>
+
+        <form method="post"  action="/DeptController/CreateDept">
+            Dept Number :  <input name="deptno" type="text" />  
+            <br/> <br/>
+
+            Dept Name  :  <input name="dname" type="text" />  
+            <br/> <br/>
+
+            Dept Location  :  <input name="loc" type="text" />  
+            <br/> <br/>
+            
+            <input type="submit" value="Create Dept" />
+        </form>
+        <hr/>
+        <a  <a href="/DeptController/Depts">Back to Dept List</a>
+         
+    </body>
+</html>

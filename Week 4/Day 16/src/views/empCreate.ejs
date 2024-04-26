@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            h3{
+                color : blue;
+                text-align: center;
+            }
+
+            div
+            {
+                border: 2px solid rgb(255, 115, 0);
+                margin: 10px;
+                padding : 5px;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3>Developing MVC Based Web Application using Express JS</h3>
+        <hr/>
+
+
+        <h2>Create New Employee Page</h2>
+        <hr/>
+
+        <form method="post"  action="/EmpController/CreateEmp">
+            Employee Number :  <input name="empno" type="text" />  
+            <br/> <br/>
+
+            Employee Name  :  <input name="ename" type="text" />  
+            <br/> <br/>
+
+            Employee Job  :  <input name="job" type="text" />  
+            <br/> <br/>
+
+            Employee Salary  :  <input name="salary" type="text" />  
+            <br/> <br/>
+
+            Dept Number  :  <input name="deptno" type="text" />  
+            <br/> <br/>
+            
+            <input type="submit" value="Create Dept" />
+        </form>
+        <hr/>
+        <a  <a href="/EmpController/Emps">Back to Employee List</a>
+         
+    </body>
+</html>
